@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Iti.AppDemo.Application.Handlers;
+using Iti.AppDemo.Domain.Contexts.Services;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -29,6 +31,9 @@ namespace Iti.AppDemo.API
                     Contact = new Contact { Name = "Itau" },
                 });
             });
+
+            services.AddTransient<IPasswordValidationService, PasswordValidationService>();
+            services.AddTransient<PasswordHandler, PasswordHandler>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

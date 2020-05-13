@@ -17,9 +17,6 @@ namespace Iti.AppDemo.API.Controllers
         }
 
         [HttpPost("ValidatePassword")]
-        [ProducesResponseType(typeof(string), 200)]
-        [ProducesResponseType(400)]
-        [ProducesResponseType(500)]
         public ICommandResult Post([FromBody]CreatePasswordCommand command)
         {
             var result = (CreatePasswordCommandResult)_handler.Handle(command);
