@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UnitTests\" />
+    <ProjectReference Include="..\Iti.AppDemo.Domain\Iti.AppDemo.Domain.csproj" />
   </ItemGroup>
 
 </Project>
