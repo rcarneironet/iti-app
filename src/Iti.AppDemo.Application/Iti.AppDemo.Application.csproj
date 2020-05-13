@@ -9,8 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Iti.AppDemo.Core\Iti.AppDemo.Core.csproj" />
-    <ProjectReference Include="..\..\Iti.AppDemo.Domain\Iti.AppDemo.Domain.csproj" />
+    <ProjectReference Include="..\Iti.AppDemo.Core\Iti.AppDemo.Core.csproj" />
+    <ProjectReference Include="..\Iti.AppDemo.Domain\Iti.AppDemo.Domain.csproj" />
   </ItemGroup>
 
 </Project>
