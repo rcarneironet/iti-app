@@ -7,10 +7,13 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
 WORKDIR /src
-COPY ["src/Iti.AppDemo.API/Iti.AppDemo.API.csproj", "src/Iti.AppDemo.API/"]
+
+COPY ["Iti.AppDemo.API/Iti.AppDemo.API.csproj", "src/Iti.AppDemo.API/"]
 RUN dotnet restore "src/Iti.AppDemo.API/Iti.AppDemo.API.csproj"
+
 COPY . .
-WORKDIR "/src/src/Iti.AppDemo.API"
+
+WORKDIR "/src/Iti.AppDemo.API"
 RUN dotnet build "Iti.AppDemo.API.csproj" -c Release -o /app/build
 
 FROM build AS publish
