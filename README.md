@@ -30,12 +30,11 @@ Como não estamos acessando nenhum recurso externo, nenhum implementação foi f
 
 ### APIs
 
-Essa camada é responsável por expor APIs REST para consumo. Os métodos devem obedecer a premissão de "Thin Controllers", ou seja, nenhum regra de negócio
-deve ser implementada aqui visando baixo acoplamento. Tudo é feito através de injeção de dependência.
+Essa camada é responsável por expor APIs REST para consumo. Os métodos devem obedecer a premissa de "Thin Controllers", ou seja, nenhum regra de negócio deve ser implementada aqui visando baixo acoplamento. Tudo é feito através de injeção de dependência. Por se tratar de uma demo, não me atentei ao fato de utilizar HTTP status code adequadamente, estou sempre retornando um JSON com o status da requisição, uma mensagem e conteúdo do request. O ideal seria retornar os https status codes adequadamente.
 
 ### Tests
 
-Essa camada contém testes, sendo eles testes unitários (para comandos, Core e handlers) e Fakes.
+Essa camada contém testes, sendo eles testes unitários (para comandos, Core e handlers) e Fakes. Não temos acesso a banco de dados ou alguma outra fonte externa, dessa forma os testes de integração não foram construídos. Se houvesse a necessidade de conexão com banco de dados, seria possível criar um Mock ou um acesso a dados em banco In-Memory (utilizando Entity Framework por exemplo) para testar a integração com fontes externas a API.
 
 ### Docker
 
