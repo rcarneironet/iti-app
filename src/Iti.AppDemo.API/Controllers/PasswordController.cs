@@ -1,7 +1,6 @@
 ﻿using Iti.AppDemo.Application.Handlers;
 using Iti.AppDemo.Core.Commands;
 using Iti.AppDemo.Domain.Contexts.Commands.PasswordCommands;
-using Iti.AppDemo.Domain.Contexts.Commands.PasswordCommands.Output;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Iti.AppDemo.API.Controllers
@@ -19,8 +18,7 @@ namespace Iti.AppDemo.API.Controllers
         [HttpPost("ValidatePassword")]
         public ICommandResult Post([FromBody]CreatePasswordCommand command)
         {
-            var result = (CreatePasswordCommandResult)_handler.Handle(command);
-            return result;
+            return (_handler.Handle(command));
         }
     }
 }

@@ -19,12 +19,10 @@ namespace Iti.AppDemo.Core.Implementations
     {
         public bool IsValid(string password)
         {
-            Regex regex = new Regex(@"((?=.*\d)(?=.*[A-Z])(?=.*\W).{9,})");
-            Match match = regex.Match(password);
-
+            var isPasswordOk = Regex.Match(password, @"((?=.*\d)(?=.*[A-Z])(?=.*\W).{9,})").Success;
             int repeatedChars = password.Length - password.ToCharArray().Distinct().Count();
 
-            return match.Success && repeatedChars == 0;
+            return (isPasswordOk && repeatedChars == 0);
         }
     }
 }

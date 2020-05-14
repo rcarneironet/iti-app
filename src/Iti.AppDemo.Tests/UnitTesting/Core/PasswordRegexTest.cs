@@ -13,7 +13,7 @@ namespace Iti.AppDemo.Tests.UnitTesting.Core
         [Test]
         public void PasswordRegexTest_TestRegex_ReturnsTrue()
         {
-            var password = "@789Ab654";
+            var password = "@789Aa654";
             var passwordRegex = new PasswordRegex();
 
             var result = passwordRegex.IsValid(password);
@@ -24,7 +24,7 @@ namespace Iti.AppDemo.Tests.UnitTesting.Core
         [Test]
         public void PasswordRegexTest_TestRegex_ReturnsFalse()
         {
-            var password = "@789Ab6544";
+            var password = "@789Aa65414";
             var passwordRegex = new PasswordRegex();
 
             var result = passwordRegex.IsValid(password);

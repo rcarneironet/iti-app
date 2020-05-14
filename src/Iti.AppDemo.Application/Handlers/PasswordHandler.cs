@@ -24,8 +24,8 @@ namespace Iti.AppDemo.Application.Handlers
 
             if (Invalid)
             {
-                return new CommandResult(false, 
-                    "Senha criada com sucesso", 
+                return new CommandResult(false,
+                    "Erro, corrija os seguintes problemas:",
                     Notifications);
             }
 
